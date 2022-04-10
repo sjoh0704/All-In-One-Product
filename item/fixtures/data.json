@@ -1,0 +1,16 @@
+[
+    {
+      "model": "item.Category",
+      "fields": {
+        "id": 1,
+        "kind": ""
+       }
+    },
+    {
+        "model": "item.Category",
+        "fields": {
+          "id": 2,
+          "kind": "나"
+        }
+    }
+  ]
