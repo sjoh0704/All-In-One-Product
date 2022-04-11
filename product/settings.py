@@ -96,10 +96,10 @@ DATABASES = {
     },
     'production': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get('MYSQL_PRODUCT_DB'),
-        'USER': os.environ.get('MYSQL_PRODUCT_ID'),
+        'NAME': os.environ.get('MYSQL_DB'),
+        'USER': os.environ.get('MYSQL_ID'),
         'PASSWORD': os.environ.get('MYSQL_ROOT_PASSWORD'), 
-        'HOST': os.environ.get('MYSQL_PRODUCT_HOST'),
+        'HOST': os.environ.get('MYSQL_HOST'),
         'PORT': '3306',
     }
 }
