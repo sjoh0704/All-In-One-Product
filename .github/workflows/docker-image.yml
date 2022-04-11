@@ -31,5 +31,5 @@ jobs:
         file: ./Dockerfile
         push: true
         tags: |
-          ${{ secrets.DOCKERHUB_USERNAME }}/all-in-one-front:latest
-          ${{ secrets.DOCKERHUB_USERNAME }}/all-in-one-front:${{ env.RELEASE_VERSION }}
+          ${{ secrets.DOCKERHUB_USERNAME }}/all-in-one-product:latest
+          ${{ secrets.DOCKERHUB_USERNAME }}/all-in-one-product:${{ env.RELEASE_VERSION }}
