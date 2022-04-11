@@ -88,18 +88,10 @@ WSGI_APPLICATION = 'product.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': "db",
-        'USER': "root",
-        'PASSWORD': "root", 
-        'HOST': "172.17.0.2",
-        'PORT': '3306',
-    },
-    'production': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get('MYSQL_DB'),
-        'USER': os.environ.get('MYSQL_ID'),
-        'PASSWORD': os.environ.get('MYSQL_ROOT_PASSWORD'), 
-        'HOST': os.environ.get('MYSQL_HOST'),
+        'NAME': os.environ.get('MYSQL_DB', "db"),
+        'USER': os.environ.get('MYSQL_ID', "root"),
+        'PASSWORD': os.environ.get('MYSQL_ROOT_PASSWORD', "root"), 
+        'HOST': os.environ.get('MYSQL_HOST', "172.17.0.2"),
         'PORT': '3306',
     }
 }
