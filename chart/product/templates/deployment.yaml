@@ -17,8 +17,8 @@ spec:
         image: tmdwn0704/all-in-one-product:1.0
         command: ["/bin/sh", "-c"]
         args:
-        - ./wait-for-it.sh product-db.default.svc:8080 -t 0;
-          python3 manage.py makemigrations;
+        - ./wait-for-it.sh product-db.default.svc:3306 -t 0;
+          python3 manage.py makemigrations item;
           python3 manage.py migrate;
           python3 manage.py loaddata item/fixtures/data.json;
           python3 manage.py runserver 0.0.0.0:8000;
