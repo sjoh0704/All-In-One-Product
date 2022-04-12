@@ -14,13 +14,19 @@ spec:
     spec:
       containers:
       - name: product-container
-        image: tmdwn0704/all-in-one-product:latest
+        image: tmdwn0704/all-in-one-product:0.1
+        command: ["/bin/sh", "-c"]
+        args:
+        - python3 manage.py makemigrations;
+          python3 manage.py migrate;
+          python3 manage.py loaddata item/fixtures/data.json;
+          python3 manage.py runserver 0.0.0.0:8000;
         imagePullPolicy: Always
         ports:
         - containerPort: 8000
         envFrom:
         - configMapRef:
-            name: service-url
+            name: product-url
         - configMapRef:
             name: product-db
 
@@ -63,7 +69,7 @@ spec:
             configMapKeyRef:
               name: product-db
               key: MYSQL_ROOT_PASSWORD
-        - name: MYSQL_DB
+        - name: MYSQL_DATABASE
           valueFrom: 
             configMapKeyRef:
               name: product-db

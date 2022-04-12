@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: service-url
+  name: product-url
 data:
   ORDER_SERVICE_URL: 'http://order.default.svc:8080'
   USER_SERVICE_URL: 'http://user.default.svc:8080'
@@ -17,4 +17,4 @@ data:
   MYSQL_ID: 'root'
   MYSQL_ROOT_PASSWORD: 'root' ## TODO secret으로 빼기 
   MYSQL_DB: 'product'
-  MYSQL_PRODUCT_HOST: 'product-db.default.svc'
+  MYSQL_HOST: 'product-db.default.svc'
