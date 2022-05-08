@@ -67,9 +67,9 @@ jobs:
 
     - name: update manifest
       run: |
-        sed -i '/^  repository:/c\  repository: ${{ env.IMAGE_REPO }}' $MANIFEST_REPO_DIR/chart/$CHART_NAME/values.yaml
-        sed -i '/^  registry:/c\  registry: ${{ env.APP_NAME }}' $MANIFEST_REPO_DIR/chart/$CHART_NAME/values.yaml
-        sed -i '/^  tag:/c\  tag: ${{ env.RELEASE_VERSION }}' $MANIFEST_REPO_DIR/chart/$CHART_NAME/values.yaml
+        sed -i '/^    repository:/c\    repository: ${{ env.IMAGE_REPO }}' $MANIFEST_REPO_DIR/chart/$CHART_NAME/values.yaml
+        sed -i '/^    registry:/c\    registry: ${{ env.APP_NAME }}' $MANIFEST_REPO_DIR/chart/$CHART_NAME/values.yaml
+        sed -i '/^    tag:/c\    tag: ${{ env.RELEASE_VERSION }}' $MANIFEST_REPO_DIR/chart/$CHART_NAME/values.yaml
 
     - name: Add & Commit
       uses: EndBug/add-and-commit@v4.4.0
